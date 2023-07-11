@@ -1,7 +1,7 @@
 import React from 'react'
 
-function MovieSearch({updateSearchTitle, searchTitle, movieData}) {
-    console.log(searchTitle)
+function MovieSearch({updateSearchTitle, searchTitle}) {
+    // console.log(searchTitle)
 
   return (
     <div className='movie-search'>
@@ -12,7 +12,7 @@ function MovieSearch({updateSearchTitle, searchTitle, movieData}) {
               className='input'
               name='title'
               id='title'
-              placeholder="Enter Movie Title:"
+              placeholder="Please enter movie or show title"
             />
             <button className='search-btn'>Search Movie</button>
           </form>

@@ -2,9 +2,9 @@ html{
     background-image: linear-gradient(to right, red , rgb(130, 12, 5));
     color: white;
     font-family: 'PT Sans Narrow', sans-serif;
-    -webkit-background-size: cover;
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
+    -o-background-size: cover; */
     max-height: 100%;
     margin:0;
     padding:0;
@@ -27,7 +27,7 @@ html{
 .movie-grid{
     width: 80%;
     display: grid;
-    grid-template-columns: .5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 10%;
     margin: 20vh auto;
 }
@@ -38,7 +38,7 @@ html{
     background-size:contain;
     background-repeat: no-repeat;
     margin-top: 5%;
-    height:70vh;
+    /* height:70vh; */
     max-width: 100%;
 }
 
@@ -54,7 +54,7 @@ html{
     margin-top: 0px;
     border: 20px solid black;
     border-radius: 5%;
-    /* object-fit: contain; */
+    object-fit: fill;
 }
 
 .movie-form .input {
@@ -73,6 +73,14 @@ html{
 .search-btn:hover{
     background-color: rgb(130, 12, 5);
     
+}
+
+.movie-info{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    border: 2px solid black;
+    height: 80%;
+    padding: 2%;
+    background-color: rgb(23, 23, 23, .7);
 }
 
 

@@ -1,15 +1,18 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import MovieSearch from './components/MovieSearch';
-import MovieDetails from './components/MovieDetails';
+import MoviePoster from './components/MoviePoster';
 import MovieInfo from './components/MovieInfo';
+// import Trailer from './components/Trailer';
 
-const API_KEY = process.env.REACT_APP_API_KEY.replace(";", "");
+// const API_KEY = process.env.REACT_APP_API_KEY.replace(";", "");
+
+const API_KEY = '7916cad4';
 
 function App() {
     const baseURL = 'https://www.omdbapi.com/?t=';
-    const [searchTitle, setSearchTitle] = useState(null);
+    const [searchTitle, setSearchTitle] = useState("Spider-man 3");
     const [movieData, setMovieData] = useState(null);
     const [error, setError] = useState(null);
     // const [searchYear, setSearchYear] = useState('2000');
@@ -19,11 +22,11 @@ function App() {
         e.preventDefault();
         const title = e.target.title.value;
         if (title) setSearchTitle(title);
-        // e.target.reset();
+        e.target.reset();
       };
 
     
-    React.useEffect(() => {
+    useEffect(() => {
         // invalid url will trigger an 404 error
         axios.get(`${baseURL}${searchTitle}&apikey=${API_KEY}`).then((response) => {
           setMovieData(response.data);
@@ -52,7 +55,8 @@ function App() {
                 <MovieInfo movieData={movieData}/>
             </div>
             <div className='grid-two'>
-                <MovieDetails movieData={movieData}/>
+                <MoviePoster movieData={movieData}/>
+                {/* <Trailer searchTitle={searchTitle}/> */}
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MovieDetails({movieData}) {
+function MoviePoster({movieData}) {
   return (
     <div className="movie-details">
         <div className='movie-poster'>
@@ -12,4 +12,4 @@ function MovieDetails({movieData}) {
   )
 }
 
-export default MovieDetails
+export default MoviePoster
