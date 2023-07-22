@@ -6,7 +6,7 @@ import MoviePoster from './components/MoviePoster';
 import MovieInfo from './components/MovieInfo';
 import Trailer from './components/Trailer';
 
-// const API_KEY = process.env.REACT_APP_API_KEY.replace(";", "");
+const API_KEY = process.env.REACT_APP_API_KEY
 
 // const API_KEY = '7916cad4';
 
@@ -34,7 +34,8 @@ function App() {
         const config = {
             headers:{
               'accept': 'application/json',
-              'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZjc3OGE0MmVlMzQyYzBkZGViMmEzOWVlOWIxYWI5ZSIsInN1YiI6IjVjM2UzZTcyYzNhMzY4MTFiNDNlYjk2YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vP-mCIEzUbTI8yH9Nri-46kaNCHOB_x-7xQQZf3MMMY'
+              'Authorization': API_KEY
+            //   'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZjc3OGE0MmVlMzQyYzBkZGViMmEzOWVlOWIxYWI5ZSIsInN1YiI6IjVjM2UzZTcyYzNhMzY4MTFiNDNlYjk2YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vP-mCIEzUbTI8yH9Nri-46kaNCHOB_x-7xQQZf3MMMY'
             }
         };
         // invalid url will trigger an 404 error
