@@ -76,10 +76,6 @@ function App() {
                 <MovieInfo movieData={movieData} idx={movieIndex} setMovieIndex={setMovieIndex} />
             </div>
             <div className='grid-two'>
-                
-                {/* <MoviePoster movieData={selectedMovie}/>
-                <Trailer movieDataID={selectedMovie.id}/> */}
-
                 {screenDisplay()}
             </div>
         </div>

@@ -8,24 +8,43 @@ const config = {
     }
   };
 function Trailer({movieData, movieIndex}) {
-    let selectedMovie = movieData[movieIndex];
-    let movieDataID = selectedMovie.id 
-    const [trailerData, setTrailerData] = useState('');
+    let movieDataID = movieData[movieIndex].id 
+    const [trailerData, setTrailerData] = useState({});
+    const [trailerAvailable, setTrailerAvailable] = useState(true);
 
     useEffect(()=>{
         axios.get(`https://api.themoviedb.org/3/movie/${movieDataID}/videos?language=en-US`, config).then((response) => {
             setTrailerData(response.data.results[0]);
+            if (response.data.results.length > 0){
+                setTrailerAvailable(true);
+            }
+            else{
+                setTrailerAvailable(false);
+            }
             // console.log(trailerData);
           }).catch(error => {
+            setTrailerAvailable(false);
             // console.log(error);
           });
-    }, [trailerData, movieDataID]);
+    }, [trailerData, movieDataID, movieIndex]);
+
+
+    const trailerVideo = () =>{
+        if (trailerAvailable === true){
+            return <iframe src={'https://www.youtube.com/embed/' + trailerData.key + '?rel=0;autoplay=1&mute=1'} allow='autoplay'   title={movieDataID}></iframe>
+        }
+        else{
+            return <h1>Video not available!</h1>
+        }
+
+    }
 
   return (
     <div className='movie-details'>
         <div className='movie-poster'>
             <div className='movie-screen'>
-                <iframe src={'https://www.youtube.com/embed/' + trailerData.key + '?rel=0;autoplay=1&mute=1'} allow='autoplay'   title={movieDataID}></iframe>     
+                {trailerVideo()}
+                {/* <iframe src={'https://www.youtube.com/embed/' + trailerData.key + '?rel=0;autoplay=1&mute=1'} allow='autoplay'   title={movieDataID}></iframe> */}
             </div>
         </div>
     </div>

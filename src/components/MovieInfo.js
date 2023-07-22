@@ -3,45 +3,56 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function MovieInfo({movieData, idx, setMovieIndex}) {
+    let currentIdx = idx;
     let selectedMovie = movieData[idx];
     let lengthofdata = movieData.length;
-    // const [mvindex, setMvindex] = useState(0);
+
+
     const updateMovieIndex = (direction) => {
-        if (direction === "Left" && idx >= 0){
-            setMovieIndex(idx-1);
+        if (movieData.length === 1){
+            currentIdx = 0;
         }
-        if(direction ==="Left" && idx < 0){
-            idx = (lengthofdata -1);
-            setMovieIndex(idx);
+        else if (direction === "Left" && currentIdx > 0){
+            let newIdx = currentIdx - 1;
+            setMovieIndex(newIdx);
         }
-        if(direction === "Right" && idx > lengthofdata-1){
-            idx = 0;
-            setMovieIndex(idx);
+        else if(direction ==="Left" && currentIdx <= 0){
+            let newIdx = (lengthofdata -1);
+            setMovieIndex(newIdx);
+        }
+        else if(direction === "Right" && currentIdx >= lengthofdata-1){
+            let newIdx = 0;
+            setMovieIndex(newIdx);
         }
         else{
-            setMovieIndex(idx+1);
+            setMovieIndex(currentIdx+1);
         }
     }
-    const releaseDate = "";
     console.log(selectedMovie)
   return (
     <div className='movie-info'>
-        <h1>{selectedMovie.title}</h1>
-        <h3>{releaseDate}</h3>
-        <p>{selectedMovie.overview}</p>
-        <p><span>Rating: </span>{selectedMovie.popularity}</p>
-        <p><span>ID: </span>{selectedMovie.id}</p>
+        <div className='info-section'>
+            <h1>{selectedMovie.title}</h1>
+            <h3>{selectedMovie.release_date}</h3>
+            <p>{selectedMovie.overview}</p>
+            <p><span>Rating: </span>{selectedMovie.popularity}</p>
+            <p><span>ID: </span>{selectedMovie.id}</p>
 
-        <h1>{idx}</h1>
-        <h3>Number of Results: {movieData.length}</h3>
-
-        <div onClick={()=>{updateMovieIndex("Left")}}>
-            <ArrowBackIcon />
+            <h1>{currentIdx}</h1>
+            <h3>Number of Results: {movieData.length}</h3>
         </div>
 
-        <div onClick={()=>{updateMovieIndex("Right")}}>
-            <ArrowForwardIcon />
+        <div className='index-arrows' style={lengthofdata < 2?{display:"none"}: {display:"grid"}}>
+            <div onClick={()=>{updateMovieIndex("Left")}}>
+                <ArrowBackIcon />
+            </div>
+
+            <div onClick={()=>{updateMovieIndex("Right")}}>
+                <ArrowForwardIcon />
+            </div>
+
         </div>
+
 
     </div>
   )
