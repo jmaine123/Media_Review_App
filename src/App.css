@@ -24,10 +24,25 @@ html{
     margin-bottom: 5%;
     font-family: 'ZCOOL KuaiLe', cursive;
 }
+
+.grid-one{
+    height: 85%;
+    border: 2px solid black;
+    padding: 30px;
+    border-radius: 150px;
+    background-color: #141526;
+    box-shadow: 0 10px 200px rgb(130, 12, 5);
+
+}
+
+.remote-control{
+    margin-top: 15%;
+}
+
 .movie-grid{
-    width: 80%;
+    width: 75%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .30fr 1.6fr;
     column-gap: 10%;
     margin: 20vh auto;
     min-height: 80vh;
@@ -39,22 +54,25 @@ html{
     background-size:contain;
     background-repeat: no-repeat;
     margin-top: 5%;
-    /* height:70vh; */
+    height: 46vh;
     max-width: 100%;
 }
 
 .movie-screen{
     max-width: 100%;
+    max-height: 100%;
 }
 
 .movie-screen *{
-    width: 100%;
-    height:45vh;
+    width: 620px;
+    height:340px;
     /* margin-left: 5px; */
     margin-top: 0px;
-    border: 20px solid black;
-    border-radius: 5%;
-    object-fit: fill;
+    border: 15px solid black;
+    border-radius: 2%;
+    object-fit:fill;
+    /* background-color: black; */
+    /* object-position: center center; */
 }
 
 .movie-form .input {
@@ -64,30 +82,142 @@ html{
 
 }
 
+.movie-form .input:focus{
+    outline: none;
+}
+
 .search-btn{
     background-color: red;
     color: white;
     margin: 2% auto;
+    border-radius: 200px;
+    font-size: 15px;
 }
 
 .search-btn:hover{
     background-color: rgb(130, 12, 5);
+    cursor: pointer;
     
 }
 
 .movie-info{
+    height: 40%;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
     border: 2px solid black;
     padding: 2%;
     background-color: rgb(23, 23, 23, .7);
+    overflow: auto;
+    text-overflow: ellipsis;
 }
 
 .index-arrows{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    margin: auto;
+    font-size: 3vh;
+    column-gap: 3%;
 }
 
-.info-section{
+.channel{
+    width: 30%;
+}
+
+.arrow{
+    font-size: 2px;
+}
+
+
+.info-section div{
     text-overflow: ellipsis;
+    overflow: hidden;
+    height: 60vh;
+}
+
+.medium-button{
+    border: 2px solid white;
+    border-radius: 25%;
+    text-align: center;
+}
+
+.medium-button:hover{
+    background-color: white;
+    color: rgb(130, 12, 5);
+    cursor: pointer;
+}
+
+.medium-switch{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20%;
+    margin: 10% auto;
+}
+
+
+.trending-container{
+    width: 90%;
+    /* height: 40vh; */
+    margin: 10% auto;
+    text-align: center;
+}
+
+.medium-toggle{
+    color: white !important;
+}
+
+.medium-toggle.Mui-selected {
+    color: red !important;
+    background-color:white !important;
+    font-weight: 400 !important;
+}
+.arrow{
+    font-size: 3.5em !important;
+}
+
+.arrow:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.channel-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 5%;
+    width: 90%;
+    margin: 10% auto;
+    text-align: center;
+    font-size: 30px;
+}
+
+.channel-digit{
+    border-radius: 40%;
+    box-shadow: 1px 3px 6px 5px rgba(0,0,0,0.68);
+    border: 1px solid white;
+}
+
+.channel-digit:hover{
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+
+#channel-enter{
+    font-size: 15px;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 20%;
+    padding:10%;
+    background-color: #1c2670;
+}
+
+#channel-clear{
+    font-size: 15px;
+    margin: auto;
+    background-color: #fc2003;
+    color: white;
+    border: 2px solid white;
+    padding:10%;
+    border-radius: 20%;
 }
 

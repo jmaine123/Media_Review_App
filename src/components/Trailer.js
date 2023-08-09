@@ -8,13 +8,13 @@ const config = {
     }
   };
 function Trailer({movieData, movieIndex}) {
-    let movieDataID = movieData[movieIndex].id 
+    let movieDataID = movieData.length > 0? movieData[movieIndex].id: '';
     const [trailerData, setTrailerData] = useState({});
     const [trailerAvailable, setTrailerAvailable] = useState(true);
 
     useEffect(()=>{
         axios.get(`https://api.themoviedb.org/3/movie/${movieDataID}/videos?language=en-US`, config).then((response) => {
-            setTrailerData(response.data.results[0]);
+            setTrailerData(response.data.results.filter((video)=> video["type"] === "Trailer")[0]);
             if (response.data.results.length > 0){
                 setTrailerAvailable(true);
             }
@@ -31,7 +31,7 @@ function Trailer({movieData, movieIndex}) {
 
     const trailerVideo = () =>{
         if (trailerAvailable === true){
-            return <iframe src={'https://www.youtube.com/embed/' + trailerData.key + '?rel=0;autoplay=1&mute=1'} allow='autoplay'   title={movieDataID}></iframe>
+            return <iframe src={'https://www.youtube.com/embed/' + trailerData.key + '?rel=0;autoPlay=1&mute=1'} allow='autoplay; encrypted-media;'  autoPlay={true} title={movieDataID}></iframe>
         }
         else{
             return <h1>Video not available!</h1>

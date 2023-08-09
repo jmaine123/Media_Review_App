@@ -1,20 +1,19 @@
 import React from 'react'
 
-function MovieSearch({updateSearchTitle, searchTitle}) {
+function MovieSearch({updateSearchTitle}) {
     // console.log(searchTitle)
 
   return (
     <div className='movie-search'>
-        {/* <h1>{searchTitle}</h1> */}
         <form  className='movie-form' onSubmit={e => updateSearchTitle(e)}>
+            <button className='search-btn'>Search</button>
             <input
               type='text'
               className='input'
               name='title'
               id='title'
-              placeholder="Please enter movie or show title"
+              placeholder="Please enter movie title"
             />
-            <button className='search-btn'>Search Movie</button>
           </form>
 
     </div>
