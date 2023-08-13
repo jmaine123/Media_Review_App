@@ -28,7 +28,7 @@ html{
 .grid-one{
     height: 85%;
     border: 2px solid black;
-    padding: 30px;
+    padding: 10px;
     border-radius: 150px;
     background-color: #141526;
     box-shadow: 0 10px 200px rgb(130, 12, 5);
@@ -36,7 +36,7 @@ html{
 }
 
 .remote-control{
-    margin-top: 15%;
+    margin-top: 30%;
 }
 
 .movie-grid{
@@ -119,12 +119,13 @@ html{
     column-gap: 3%;
 }
 
+
 .channel{
     width: 30%;
 }
 
 .arrow{
-    font-size: 2px;
+    font-size: 5px;
 }
 
 
@@ -139,6 +140,7 @@ html{
     border-radius: 25%;
     text-align: center;
 }
+
 
 .medium-button:hover{
     background-color: white;

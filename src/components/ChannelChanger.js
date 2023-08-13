@@ -30,14 +30,14 @@ function ChannelChanger({channel, setChannel, movieData}) {
     }
   return (
         <div className='index-arrows' >
-            <div onClick={()=>{updateChannelIndex("Right")}} >
-                <ArrowCircleUpTwoToneIcon className='arrow' />
-            </div>
-            <div className='channel'>
-                <h2>{channel + 1}</h2>
-            </div>
             <div onClick={()=>{updateChannelIndex("Left")}}>
                 <ArrowCircleDownTwoToneIcon className='arrow'/>
+            </div>
+            <div className='channel'>
+                <div>{channel + 1}</div>
+            </div>
+            <div onClick={()=>{updateChannelIndex("Right")}} >
+                <ArrowCircleUpTwoToneIcon className='arrow' />
             </div>
         </div>
   )

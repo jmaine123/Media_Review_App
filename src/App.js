@@ -88,8 +88,8 @@ function App() {
         else{
             return(
                 <div className='medium-switch'>
-                    <div className='medium-button'>Start You Search</div>
-                    <div className='medium-button'>Whats Trending?</div>
+                    <div className='medium-button'><p>Search</p></div>
+                    <div className='medium-button'><p>Trending</p></div>
                 </div>
             )
         }
