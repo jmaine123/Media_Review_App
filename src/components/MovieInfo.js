@@ -26,7 +26,7 @@ function MovieInfo({movieData, idx, setMovieIndex, searchTitle}) {
             return(
                 <div>
                     <h3>No results found from search term: {searchTitle} </h3>
-                    <h4>Please adjust movie title and try again</h4>
+                    <h4>Please adjust movie title and try again!</h4>
                 </div>
             )
         }
